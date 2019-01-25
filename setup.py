@@ -62,6 +62,7 @@ setup(
         ],
         'esdl.source_providers': [
             'test = esdl.providers:TestCubeSourceProvider',
+            'sentinel1 = esdl.providers.sentinel1:S1Provider',
             'burnt_area = esdl.providers.burnt_area:BurntAreaProvider',
             'c_emissions = esdl.providers.c_emissions:CEmissionsProvider',
             'ozone = esdl.providers.ozone:OzoneProvider',
