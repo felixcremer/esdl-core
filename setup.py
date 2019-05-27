@@ -32,7 +32,6 @@ requirements = [
     'netCDF4',
     'numpy',
     'xarray',
-    'zarr',
 ]
 
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
@@ -63,8 +62,10 @@ setup(
         ],
         'esdl.source_providers': [
             'test = esdl.providers:TestCubeSourceProvider',
-            'sentinel1 = esdl.providers.sentinel1:S1Provider',
-            'sentinel1vv = esdl.providers.sentinel1:S1Provider',
+            'sentinel1_vh_a = esdl.providers.sentinel1:S1Provider',
+            'sentinel1_vh_d = esdl.providers.sentinel1:S1Provider',
+            'sentinel1_vv_a = esdl.providers.sentinel1:S1Provider',
+            'sentinel1_vv_d = esdl.providers.sentinel1:S1Provider',
             'burnt_area = esdl.providers.burnt_area:BurntAreaProvider',
             'c_emissions = esdl.providers.c_emissions:CEmissionsProvider',
             'ozone = esdl.providers.ozone:OzoneProvider',
