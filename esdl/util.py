@@ -55,6 +55,7 @@ def aggregate_images(images, weights=None):
         image = images[i]
         reshaped_image = image.reshape((1,) + image.shape)
         reshaped_images.append(reshaped_image)
+        print(len(reshaped_images))
         image_stack = numpy.ma.concatenate(reshaped_images)
     return numpy.ma.average(image_stack, axis=0, weights=weights)
 
