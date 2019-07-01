@@ -73,4 +73,4 @@ class S1Provider(NetCDFCubeSourceProvider):
         # converted and create a better fix.
         source_image[source_image == -9.9] = numpy.nan
 
-        return numpy.roll(numpy.flipud(source_image), 180, axis=1)
+        return numpy.flipud(source_image)
