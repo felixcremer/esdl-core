@@ -15,9 +15,10 @@ class S1Provider(NetCDFCubeSourceProvider):
             cube_config, name, dir, resampling_order)
         self.old_indices = None
         self.pol = polarisation
-        if orbit not in ['A', 'D']:
-            raise ValueError(
-                "Orbit must be 'A' (ascending) or 'D' (descending).")
+        print(orbit)
+        #if orbit not in ['A', 'D']:
+        #    raise ValueError(
+        #        "Orbit must be 'A' (ascending) or 'D' (descending).")
         self.orbit = orbit
 
     @property
@@ -42,8 +43,9 @@ class S1Provider(NetCDFCubeSourceProvider):
         print(self.dir_path)
         print(os.path.expanduser(self.dir_path))
         dir_path = os.path.realpath(os.path.expanduser(self.dir_path))
+        # This assumes that orbit and polarisation are following each other in the filename
         globpattern = os.path.join(
-            dir_path, "S1*_{0}_*_{1}_*.nc".format(self.orbit, self.pol))
+            dir_path, "S1*_{0}_{1}_*.nc".format(self.orbit, self.pol))
         file_paths = glob.glob(globpattern)
         print(globpattern)
         source_time_ranges = list()
